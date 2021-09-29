@@ -11,7 +11,7 @@ Use the HYAS Protect integration to get the verdict information for FQDN, IP Add
 
     | **Parameter** | **Description** | **Required** |
     | --- | --- | --- |
-    | HYAS Protect Api Key | HYAS Protect API Key. | True |
+    | HYAS Protect Api Key | HYAS Protect API Key.  | True |
     | Trust any certificate (not secure) | Trust any certificate \(not secure\). | False |
     | Use system proxy settings | Use system proxy settings. | False |
 
@@ -42,8 +42,8 @@ Returns verdict information for the provided Domain.
 | DBotScore.Score | Number | The actual score. | 
 | DBotScore.Type | String | The indicator type. | 
 | DBotScore.Vendor | String | The vendor used to calculate the indicator score. | 
-| HYAS.Verdict | String | Verdict for the provided Domain. | 
-| HYAS.Reasons | Unknown | Verdict Reasons the provided Domain. | 
+| HYAS.DomainVerdict.Verdict | String | Verdict for the provided Domain. | 
+| HYAS.DomainVerdict.Reasons | Unknown | Verdict Reasons the provided Domain. | 
 
 
 #### Command Example
@@ -61,8 +61,8 @@ Returns verdict information for the provided Domain.
     "Domain": {
         "Name": "google.com"
     },
-    "HYAS Protect": {
-        "Domain": {
+    "HYAS": {
+        "DomainVerdict": {
             "reasons": [
                 "This domain is trusted",
                 "This registrar is trusted"
@@ -75,7 +75,7 @@ Returns verdict information for the provided Domain.
 
 #### Human Readable Output
 
->### HYAS Protect Domain verdict for google.com
+>### HYAS Domain verdict for google.com
 >|Verdict|Reasons|
 >|---|---|
 >| ALLOW | This domain is trusted,<br/>This registrar is trusted |
@@ -104,8 +104,8 @@ Returns verdict information for the provided IP Address.
 | DBotScore.Score | Number | The actual score. | 
 | DBotScore.Type | String | The indicator type. | 
 | DBotScore.Vendor | String | The vendor used to calculate the indicator score. | 
-| HYAS.Verdict | String | Verdict for the provided IP Address. | 
-| HYAS.Reasons | Unknown | Verdict Reasons for the provided IP Address. | 
+| HYAS.IPVerdict.Verdict | String | Verdict for the provided IP Address. | 
+| HYAS.IPVerdict.Reasons | Unknown | Verdict Reasons for the provided IP Address. | 
 
 
 #### Command Example
@@ -120,8 +120,8 @@ Returns verdict information for the provided IP Address.
         "Type": "ip",
         "Vendor": "HYAS Protect"
     },
-    "HYAS Protect": {
-        "Domain": {
+    "HYAS": {
+        "DomainVerdict": {
             "reasons": [],
             "verdict": "ALLOW"
         }
@@ -134,7 +134,7 @@ Returns verdict information for the provided IP Address.
 
 #### Human Readable Output
 
->### HYAS Protect IP verdict for 8.8.8.8
+>### HYAS IP verdict for 8.8.8.8
 >|Verdict|
 >|---|
 >| ALLOW |
@@ -163,8 +163,8 @@ Returns verdict information for the provided FQDN.
 | DBotScore.Score | Number | The actual score. | 
 | DBotScore.Type | String | The indicator type. | 
 | DBotScore.Vendor | String | The vendor used to calculate the indicator score. | 
-| HYAS.Verdict | String | Verdict for for the provided FQDN. | 
-| HYAS.Reasons | Unknown | Verdict Reasons for the provided FQDN. | 
+| HYAS.FQDNVerdict.Verdict | String | Verdict for for the provided FQDN. | 
+| HYAS.FQDNVerdict.Reasons | Unknown | Verdict Reasons for the provided FQDN. | 
 
 
 #### Command Example
@@ -182,8 +182,8 @@ Returns verdict information for the provided FQDN.
     "Domain": {
         "Name": "www.google.com"
     },
-    "HYAS Protect": {
-        "Domain": {
+    "HYAS": {
+        "DomainVerdict": {
             "reasons": [
                 "This domain is trusted",
                 "This registrar is trusted"
@@ -196,7 +196,7 @@ Returns verdict information for the provided FQDN.
 
 #### Human Readable Output
 
->### HYAS Protect FQDN verdict for www.google.com
+>### HYAS FQDN verdict for www.google.com
 >|Verdict|Reasons|
 >|---|---|
 >| ALLOW | This domain is trusted,<br/>This registrar is trusted |
@@ -225,8 +225,8 @@ Returns verdict information for the provided Nameserver.
 | DBotScore.Score | Number | The actual score. | 
 | DBotScore.Type | String | The indicator type. | 
 | DBotScore.Vendor | String | The vendor used to calculate the indicator score. | 
-| HYAS.Verdict | String | Verdict for the provided Nameserver. | 
-| HYAS.Reasons | Unknown | Verdict Reasons for the provided Nameserver. | 
+| HYAS.NameserverVerdict.Verdict | String | Verdict for the provided Nameserver. | 
+| HYAS.NameserverVerdict.Reasons | Unknown | Verdict Reasons for the provided Nameserver. | 
 
 
 #### Command Example
@@ -235,8 +235,8 @@ Returns verdict information for the provided Nameserver.
 #### Context Example
 ```json
 {
-    "HYAS Protect": {
-        "Domain": {
+    "HYAS": {
+        "DomainVerdict": {
             "reasons": [],
             "verdict": "ALLOW"
         }
@@ -246,7 +246,7 @@ Returns verdict information for the provided Nameserver.
 
 #### Human Readable Output
 
->### HYAS Protect Nameserver verdict for ns1.example.com
+>### HYAS Nameserver verdict for ns1.example.com
 >|Verdict|
 >|---|
 >| ALLOW |
