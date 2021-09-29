@@ -3,7 +3,6 @@ HYAS Protect is a generational leap forward utilizing authoritative knowledge of
 
 Use the HYAS Protect integration to get the verdict information for FQDN, IP Address and NameServer.
 
-
 ## Configure HYAS Protect on Cortex XSOAR
 
 1. Navigate to **Settings** > **Integrations** > **Servers & Services**.
@@ -122,7 +121,7 @@ Returns verdict information for the provided IP Address.
         "Vendor": "HYAS Protect"
     },
     "HYAS Protect": {
-        "IP Address": {
+        "IP": {
             "reasons": [],
             "verdict": "ALLOW"
         }
