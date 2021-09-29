@@ -121,7 +121,7 @@ Returns verdict information for the provided IP Address.
         "Vendor": "HYAS Protect"
     },
     "HYAS Protect": {
-        "IP": {
+        "Domain": {
             "reasons": [],
             "verdict": "ALLOW"
         }
@@ -183,7 +183,7 @@ Returns verdict information for the provided FQDN.
         "Name": "www.google.com"
     },
     "HYAS Protect": {
-        "FQDN": {
+        "Domain": {
             "reasons": [
                 "This domain is trusted",
                 "This registrar is trusted"
@@ -236,7 +236,7 @@ Returns verdict information for the provided Nameserver.
 ```json
 {
     "HYAS Protect": {
-        "Nameserver": {
+        "Domain": {
             "reasons": [],
             "verdict": "ALLOW"
         }
