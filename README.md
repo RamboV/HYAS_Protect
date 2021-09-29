@@ -11,7 +11,7 @@ Use the HYAS Protect integration to get the verdict information for FQDN, IP Add
 
     | **Parameter** | **Description** | **Required** |
     | --- | --- | --- |
-    | HYAS Protect Api Key | HYAS Protect API Key  | True |
+    | HYAS Protect Api Key |  | True |
     | Trust any certificate (not secure) | Trust any certificate \(not secure\). | False |
     | Use system proxy settings | Use system proxy settings. | False |
 
@@ -75,7 +75,7 @@ Returns verdict information for the provided Domain.
 
 #### Human Readable Output
 
->### HYAS Protect Domain verdict for domain : google.com
+>### HYAS Protect Domain verdict for google.com
 >|Verdict|Reasons|
 >|---|---|
 >| ALLOW | This domain is trusted,<br/>This registrar is trusted |
@@ -134,7 +134,7 @@ Returns verdict information for the provided IP Address.
 
 #### Human Readable Output
 
->### HYAS Protect IP verdict for ip : 8.8.8.8
+>### HYAS Protect IP verdict for 8.8.8.8
 >|Verdict|
 >|---|
 >| ALLOW |
@@ -196,7 +196,7 @@ Returns verdict information for the provided FQDN.
 
 #### Human Readable Output
 
->### HYAS Protect FQDN verdict for fqdn : www.google.com
+>### HYAS Protect FQDN verdict for www.google.com
 >|Verdict|Reasons|
 >|---|---|
 >| ALLOW | This domain is trusted,<br/>This registrar is trusted |
@@ -246,8 +246,7 @@ Returns verdict information for the provided Nameserver.
 
 #### Human Readable Output
 
->### HYAS Protect Nameserver verdict for nameserver : ns1.example.com
+>### HYAS Protect Nameserver verdict for ns1.example.com
 >|Verdict|
 >|---|
 >| ALLOW |
-
