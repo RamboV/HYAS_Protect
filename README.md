@@ -3,6 +3,7 @@ HYAS Protect is a generational leap forward utilizing authoritative knowledge of
 
 Use the HYAS Protect integration to get the verdict information for FQDN, IP Address and NameServer.
 
+
 ## Configure HYAS Protect on Cortex XSOAR
 
 1. Navigate to **Settings** > **Integrations** > **Servers & Services**.
@@ -11,7 +12,7 @@ Use the HYAS Protect integration to get the verdict information for FQDN, IP Add
 
     | **Parameter** | **Description** | **Required** |
     | --- | --- | --- |
-    | HYAS Protect Api Key | HYAS Protect API Key.  | True |
+    | HYAS Protect Api Key | HYAS Protect API Key. | True |
     | Trust any certificate (not secure) | Trust any certificate \(not secure\). | False |
     | Use system proxy settings | Use system proxy settings. | False |
 
@@ -250,3 +251,4 @@ Returns verdict information for the provided Nameserver.
 >|Verdict|
 >|---|
 >| ALLOW |
+
