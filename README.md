@@ -12,7 +12,7 @@ This integration was integrated and tested with version 1.0.0 of HYAS Protect
 
     | **Parameter** | **Description** | **Required** |
     | --- | --- | --- |
-    | HYAS Protect Api Key | HYAS Protect API Key.  | True |
+    | HYAS Protect Api Key |  | True |
     | Trust any certificate (not secure) | Trust any certificate \(not secure\). | False |
     | Use system proxy settings | Use system proxy settings. | False |
 
