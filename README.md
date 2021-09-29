@@ -152,7 +152,7 @@ Returns verdict information for the provided FQDN.
 
 | **Argument Name** | **Description** | **Required** |
 | --- | --- | --- |
-| fqdn | fqdn value to query. | Required | 
+| fqdn | FQDN value to query. | Required | 
 
 
 #### Context Output
@@ -214,7 +214,7 @@ Returns verdict information for the provided Nameserver.
 
 | **Argument Name** | **Description** | **Required** |
 | --- | --- | --- |
-| nameserver | nameserver value to query. | Required | 
+| nameserver | Nameserver value to query. | Required | 
 
 
 #### Context Output
