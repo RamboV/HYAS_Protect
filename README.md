@@ -2,7 +2,7 @@
 HYAS Protect is a generational leap forward utilizing authoritative knowledge of attacker infrastructure including unrivaled domain-based intelligence to proactively protect enterprises from cyberattacks. HYAS Protect is deployed as a cloud-based DNS security solution or through API integration with existing solutions. HYAS Protect combines infrastructure expertise and multi-variant communication pattern analysis to deliver reputational verdicts for any domain and infrastructure, allowing enterprises to preempt attacks while proactively assessing risk in real-time. HYAS Protect can enforce security, block command and control (C2) communication used by malware, ransomware, and botnets, block phishing attacks, and deliver a high-fidelity threat signal that enhances an enterprise’s existing security and IT governance stack.
 
 Use the HYAS Protect integration to get the verdict information for FQDN, IP Address and NameServer.
-This integration was integrated and tested with version 1.0.0 of HYAS Protect
+This integration was integrated and tested with version 1.0.0 of HYAS Protect.
 
 ## Configure HYAS Protect on Cortex XSOAR
 
@@ -12,7 +12,7 @@ This integration was integrated and tested with version 1.0.0 of HYAS Protect
 
     | **Parameter** | **Description** | **Required** |
     | --- | --- | --- |
-    | HYAS Protect Api Key |  | True |
+    | HYAS Protect Api Key | HYAS Protect API Key. | True |
     | Trust any certificate (not secure) | Trust any certificate \(not secure\). | False |
     | Use system proxy settings | Use system proxy settings. | False |
 
@@ -43,8 +43,8 @@ Returns verdict information for the provided Domain.
 | DBotScore.Score | Number | The actual score. | 
 | DBotScore.Type | String | The indicator type. | 
 | DBotScore.Vendor | String | The vendor used to calculate the indicator score. | 
-| HYAS.DomainVerdict.Verdict | String | Verdict for the provided Domain. | 
-| HYAS.DomainVerdict.Reasons | Unknown | Verdict Reasons the provided Domain. | 
+| HYAS.DomainVerdict.verdict | String | Verdict for the provided Domain. | 
+| HYAS.DomainVerdict.reasons | Unknown | Verdict Reasons the provided Domain. | 
 
 
 #### Command Example
@@ -63,13 +63,15 @@ Returns verdict information for the provided Domain.
         "Name": "google.com"
     },
     "HYAS": {
-        "DomainVerdict": {
-            "reasons": [
-                "This domain is trusted",
-                "This registrar is trusted"
-            ],
-            "verdict": "ALLOW"
-        }
+        "DomainVerdict": [
+            {
+                "reasons": [
+                    "This domain is trusted",
+                    "This registrar is trusted"
+                ],
+                "verdict": "ALLOW"
+            }
+        ]
     }
 }
 ```
@@ -105,8 +107,8 @@ Returns verdict information for the provided IP Address.
 | DBotScore.Score | Number | The actual score. | 
 | DBotScore.Type | String | The indicator type. | 
 | DBotScore.Vendor | String | The vendor used to calculate the indicator score. | 
-| HYAS.IPVerdict.Verdict | String | Verdict for the provided IP Address. | 
-| HYAS.IPVerdict.Reasons | Unknown | Verdict Reasons for the provided IP Address. | 
+| HYAS.IPVerdict.verdict | String | Verdict for the provided IP Address. | 
+| HYAS.IPVerdict.reasons | Unknown | Verdict Reasons for the provided IP Address. | 
 
 
 #### Command Example
@@ -122,10 +124,12 @@ Returns verdict information for the provided IP Address.
         "Vendor": "HYAS Protect"
     },
     "HYAS": {
-        "IPVerdict": {
-            "reasons": [],
-            "verdict": "ALLOW"
-        }
+        "IPVerdict": [
+            {
+                "reasons": [],
+                "verdict": "ALLOW"
+            }
+        ]
     },
     "IP": {
         "Address": "8.8.8.8"
@@ -164,8 +168,8 @@ Returns verdict information for the provided FQDN.
 | DBotScore.Score | Number | The actual score. | 
 | DBotScore.Type | String | The indicator type. | 
 | DBotScore.Vendor | String | The vendor used to calculate the indicator score. | 
-| HYAS.FQDNVerdict.Verdict | String | Verdict for for the provided FQDN. | 
-| HYAS.FQDNVerdict.Reasons | Unknown | Verdict Reasons for the provided FQDN. | 
+| HYAS.FQDNVerdict.verdict | String | Verdict for for the provided FQDN. | 
+| HYAS.FQDNVerdict.reasons | Unknown | Verdict Reasons for the provided FQDN. | 
 
 
 #### Command Example
@@ -184,13 +188,15 @@ Returns verdict information for the provided FQDN.
         "Name": "www.google.com"
     },
     "HYAS": {
-        "FQDNVerdict": {
-            "reasons": [
-                "This domain is trusted",
-                "This registrar is trusted"
-            ],
-            "verdict": "ALLOW"
-        }
+        "FQDNVerdict": [
+            {
+                "reasons": [
+                    "This domain is trusted",
+                    "This registrar is trusted"
+                ],
+                "verdict": "ALLOW"
+            }
+        ]
     }
 }
 ```
@@ -226,8 +232,8 @@ Returns verdict information for the provided Nameserver.
 | DBotScore.Score | Number | The actual score. | 
 | DBotScore.Type | String | The indicator type. | 
 | DBotScore.Vendor | String | The vendor used to calculate the indicator score. | 
-| HYAS.NameserverVerdict.Verdict | String | Verdict for the provided Nameserver. | 
-| HYAS.NameserverVerdict.Reasons | Unknown | Verdict Reasons for the provided Nameserver. | 
+| HYAS.NameserverVerdict.verdict | String | Verdict for the provided Nameserver. | 
+| HYAS.NameserverVerdict.reasons | Unknown | Verdict Reasons for the provided Nameserver. | 
 
 
 #### Command Example
@@ -237,10 +243,12 @@ Returns verdict information for the provided Nameserver.
 ```json
 {
     "HYAS": {
-        "NameserverVerdict": {
-            "reasons": [],
-            "verdict": "ALLOW"
-        }
+        "NameserverVerdict": [
+            {
+                "reasons": [],
+                "verdict": "ALLOW"
+            }
+        ]
     }
 }
 ```
@@ -251,4 +259,3 @@ Returns verdict information for the provided Nameserver.
 >|Verdict|
 >|---|
 >| ALLOW |
-
